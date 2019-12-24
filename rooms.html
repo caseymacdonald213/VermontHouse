@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+
+<script>
+    (function($) {
+
+/**
+ * Copyright 2012, Digital Fusion
+ * Licensed under the MIT license.
+ * http://teamdf.com/jquery-plugins/license/
+ *
+ * @author Sam Sehnert
+ * @desc A small plugin that checks whether elements are within
+ *     the user visible viewport of a web browser.
+ *     only accounts for vertical position, not horizontal.
+ */
+
+$.fn.visible = function(partial) {
+  
+    var $t            = $(this),
+        $w            = $(window),
+        viewTop       = $w.scrollTop(),
+        viewBottom    = viewTop + $w.height(),
+        _top          = $t.offset().top,
+          _bottom       = _top + $t.height(),
+          compareTop    = partial === true ? _bottom : _top,
+          compareBottom = partial === true ? _top : _bottom;
+    
+    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+  };
+    
+})(jQuery);
+
+var win = $(window);
+
+var allMods = $(".module");
+
+allMods.each(function(i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("already-visible"); 
+  } 
+});
+
+win.scroll(function(event) {
+  
+  allMods.each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("come-in"); 
+    }
+});
+  
+});
+</script>
+
+
+</head>
+<body>
+<div>
+
+<div id='nav-bar' class='nav-bar'>
+    <div id='nav-bar-text' class='nav-bar-text'>
+        <div id='nav-bar-text' class='nav-bar-text'>
+            <table style="width:95%">
+                <th style="width:20%; text-align: left;">
+                    <div id='nav-bar-title' class='nav-bar-title'>
+                        <a href="index.html"><div class="title"><i>Page Title</i></div></a>
+                    </div>
+                </th>
+                <th style="width:3%; text-align: center;">
+                    <div class="selected">Rooms</div>
+                </th>
+                <th style="width:4%; text-align: center;">
+                    <a href="photo_tour.html">Photo Tour</a>
+                </th>
+                <th style="width:2%; text-align: center;">
+                    <a href="amenities.html">Amenities</a>
+                </th>
+                <th style="width:5%; text-align: center;">
+                    <a href="city_and_culture.html">Cities & Culture</a>
+                </th>
+                <th style="width:3%; text-align: center;">
+                    <a href="food.html">Food</a>
+                </th>
+                <th style="width:1%; text-align: center;">
+                    <a href="info.html">Info</a>
+                </th>
+                <th style="width:20%; text-align: right;">
+                    <a href="book_a_stay.html">Book Your Stay +</a>
+                </th>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- <div class = "main"> -->
+    <!-- <div id="main-text" class="main-text">
+        <img src="img/back_house_2.jpg" alt="bathroom" width=100%> 
+       
+     </div> -->
+
+        <div id="rooms-1" class="rooms-1">
+    
+            <div id="main-section-2" class="main-section-2">
+                <table align="right">
+                    <th style="width:5%; text-align: center;">
+                        <div class="room-title">Bathroom</div>
+                        <br>
+                        <div class="room-decr">This is a blurb about the room like size of the room, what's in it, etc.</div>
+                    </th>
+                    <th style="width:5%; text-align: right;">
+                        <img src="img/outside_snow.jpg" alt="bathroom" height=500>
+                    </th>
+                </table>
+            </div>
+        </div>
+
+        <div id="main-section-2" class="main-section-2">
+                <table align="left">
+                    <th style="width:5%; text-align: left;">
+                        <img src="img/outside_snow.jpg" alt="bathroom" height=500>
+                    </th>
+                    <th style="width:5%; text-align: center;">
+                        <div class="room-title">Bathroom</div>
+                        <br>
+                        <div class="room-decr">This is a blurb about the room like size of the room, what's in it, etc.</div>
+                    </th>
+                </table>
+        </div>
+
+
+        <div id="main-section-2" class="main-section-2">
+            <table align="right">
+                <th style="width:5%; text-align: center;">
+                    <div class="room-title">Bathroom</div>
+                    <br>
+                    <div class="room-decr">This is a blurb about the room like size of the room, what's in it, etc.</div>
+                </th>
+                <th style="width:5%; text-align: right;">
+                    <img src="img/outside_snow.jpg" alt="bathroom" height=500>
+                </th>
+            </table>
+        </div>
+
+
+        <div id="main-section-2" class="main-section-2">
+                <table align="left">
+                    <th style="width:5%; text-align: left;">
+                        <img src="img/outside_snow.jpg" alt="bathroom" height=500>
+                    </th>
+                    <th style="width:5%; text-align: center;">
+                        <div class="room-title">Bathroom</div>
+                        <br>
+                        <div class="room-decr">This is a blurb about the room like size of the room, what's in it, etc.</div>
+                    </th>
+                </table>
+        </div>
+
+    <!-- </div> -->
+<!-- </div> -->
+    
+    
+</div>
+</body>
+</html>

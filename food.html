@@ -1,0 +1,192 @@
+<!-- AIzaSyAMRgAjr0nZ98PnNcvWVCYOdyR5aoCWoRY -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMRgAjr0nZ98PnNcvWVCYOdyR5aoCWoRY&callback=myMap"></script>
+
+<script>
+    function myMap() {
+    var mapProp= {
+      center:new google.maps.LatLng(51.508742,-0.120850),
+      zoom:5,
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+</script>
+
+<script>
+    (function($) {
+
+/**
+ * Copyright 2012, Digital Fusion
+ * Licensed under the MIT license.
+ * http://teamdf.com/jquery-plugins/license/
+ *
+ * @author Sam Sehnert
+ * @desc A small plugin that checks whether elements are within
+ *     the user visible viewport of a web browser.
+ *     only accounts for vertical position, not horizontal.
+ */
+
+$.fn.visible = function(partial) {
+  
+    var $t            = $(this),
+        $w            = $(window),
+        viewTop       = $w.scrollTop(),
+        viewBottom    = viewTop + $w.height(),
+        _top          = $t.offset().top,
+          _bottom       = _top + $t.height(),
+          compareTop    = partial === true ? _bottom : _top,
+          compareBottom = partial === true ? _top : _bottom;
+    
+    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+  };
+    
+})(jQuery);
+
+var win = $(window);
+
+var allMods = $(".module");
+
+allMods.each(function(i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("already-visible"); 
+  } 
+});
+
+win.scroll(function(event) {
+  
+  allMods.each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("come-in"); 
+    }
+});
+  
+});
+</script>
+
+
+</head>
+<body>
+<div>
+
+<div id='nav-bar' class='nav-bar'>
+    <div id='nav-bar-text' class='nav-bar-text'>
+        <div id='nav-bar-text' class='nav-bar-text'>
+            <table style="width:95%">
+                <th style="width:20%; text-align: left;">
+                    <div id='nav-bar-title' class='nav-bar-title'>
+                        <a href="index.html"><div class="title"><i>Page Title</i></div></a>
+                    </div>
+                </th>
+                <th style="width:3%; text-align: center;">
+                    <a href="rooms.html">Rooms</a>
+                </th>
+                <th style="width:4%; text-align: center;">
+                    <a href="photo_tour.html">Photo Tour</a>
+                </th>
+                <th style="width:2%; text-align: center;">
+                    <a href="amenities.html">Amenities</a>
+                </th>
+                <th style="width:6%; text-align: center;">
+                    <a href="city_and_culture.html">Cities and Culture</a>
+                </th>
+                <th style="width:3%; text-align: center;">
+                    <div class="selected">Food</div>
+                </th>
+                <th style="width:1%; text-align: center;">
+                    <a href="info.html">Info</a>
+                </th>
+                <th style="width:20%; text-align: right;">
+                    <a href="book_a_stay.html">Book Your Stay +</a>
+                </th>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="city-main" class="city-main">
+    <img src="img/food.jpg" alt="vt_town" width=75%>
+    <div class="image_text_bottom">Food</div>
+</div>
+
+<!-- <div class="map-blurb">
+    
+<table>
+    <th style="width:50%; text-align: center;">
+        <div class="map-blurb-text">A small blurb about the town/city/whatever can go here yay testtt tttt tt t t t t tttt ttt ttt tttt ttt tttt tttt ttt tttt tttt tttt tttt ttttt tt tt   t ttttttttttt ttttttttttttt tttttt ttttttt ttttttttttt tttttt tttt ttttt ttttt</div>
+    </th>
+    <th style="width:50%; text-align: center;">
+        <div id="city-map" class="city-map">
+            <img src="img/map.jpg" alt="vt_town" width=75%>
+        </div>
+    </th>
+</table>
+</div> -->
+
+<div class="restaurant">
+    <i>Restaurant Recommendations</i>
+</div>
+
+<div class="attraction-blurb">
+    <table>
+        <th style="width:50%; text-align: center;">
+            <div class="map-blurb-text">
+                <div class="attraction-title">Cilantro</div>
+                    A taco place with many tacos and stuffs and yummy foods and different toppings and such and it is very yummy yays
+            </div>
+        </th>
+        <th style="width:50%; text-align: center;">
+            <div id="city-map" class="city-map">
+                <img src="img/cilantro.jpg" alt="vt_town" width=75%>
+            </div>
+        </th>
+    </table>
+</div>
+
+<div class="attraction-blurb">
+    <table>
+        <th style="width:50%; text-align: center;">
+            <div class="map-blurb-text">
+                <div class="attraction-title">Restaurant #2</div>
+                A small blurb about the town/city/whatever can go here yay testtt tttt tt t t t t tttt ttt ttt tttt ttt tttt tttt ttt tttt tttt tttt tttt ttttt tt tt   t ttttttttttt ttttttttttttt tttttt ttttttt ttttttttttt tttttt tttt ttttt ttttt
+            </div>        </th>
+        <th style="width:50%; text-align: center;">
+            <div id="city-map" class="city-map">
+                <img src="img/cilantro.jpg" alt="vt_town" width=75%>
+            </div>
+        </th>
+    </table>
+</div>
+
+<div class="attraction-blurb">
+    <table>
+        <th style="width:50%; text-align: center;">
+            <div class="map-blurb-text">
+                <div class="attraction-title">Restaurant #3</div>
+                A small blurb about the town/city/whatever can go here yay testtt tttt tt t t t t tttt ttt ttt tttt ttt tttt tttt ttt tttt tttt tttt tttt ttttt tt tt   t ttttttttttt ttttttttttttt tttttt ttttttt ttttttttttt tttttt tttt ttttt ttttt
+            </div>        </th>
+        <th style="width:50%; text-align: center;">
+            <div id="city-map" class="city-map">
+                <img src="img/cilantro.jpg" alt="vt_town" width=75%>
+            </div>
+        </th>
+    </table>
+</div>
+
+<br>
+<br>
+
+
+</div>
+</body>
